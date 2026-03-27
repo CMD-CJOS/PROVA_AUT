@@ -6,7 +6,7 @@ import io.cucumber.junit.CucumberOptions;
 @CucumberOptions(
         features = "src/test/resources/features",
         glue = "steps",
-        tags = "@validarQuantidadeNoCarrinho",
+//        tags = "@validarQuantidadeNoCarrinho",
 //        tags = "@cenarioPadrao",
         plugin = {"pretty", "html:target/cucumber-report.html"}
 )

@@ -15,7 +15,7 @@ public class BasePage {
     public BasePage(WebDriver driver) {
         this.driver = driver;
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(15));
-        this.jsExecutor = (JavascriptExecutor) driver; // ESSA LINHA É A CHAVE
+        this.jsExecutor = (JavascriptExecutor) driver;
     }
 
     public void zoomOut() {
