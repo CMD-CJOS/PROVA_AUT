@@ -1,6 +1,7 @@
 package pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -9,10 +10,17 @@ import java.time.Duration;
 public class BasePage {
     protected WebDriver driver;
     public WebDriverWait wait;
+    public JavascriptExecutor jsExecutor;
 
     public BasePage(WebDriver driver) {
         this.driver = driver;
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+        this.jsExecutor = (JavascriptExecutor) driver; // ESSA LINHA É A CHAVE
+    }
+
+    public void zoomOut() {
+        this.jsExecutor = (JavascriptExecutor) driver;
+        jsExecutor.executeScript("document.body.style.zoom = '60%';");
     }
 
     public void clicar(By by) {
@@ -24,12 +32,13 @@ public class BasePage {
     }
 
     protected String obterTexto(By by) {
-//        return wait.until(ExpectedConditions.presenceOfElementLocated(by)).getText();
-        return wait.until(ExpectedConditions.presenceOfElementLocated(by)).getAttribute("innerHTML").trim();
+        String text = wait.until(ExpectedConditions.presenceOfElementLocated(by)).getAttribute("innerHTML").trim();
+        return text;
     }
 
     protected int obterQuantidade(By quantidade) {
-        return Integer.parseInt(wait.until(ExpectedConditions.presenceOfElementLocated(quantidade)).getAttribute("quantity").trim());
+        Integer quantidadeNaSacola = Integer.parseInt(wait.until(ExpectedConditions.presenceOfElementLocated(quantidade)).getAttribute("quantity").trim());
+        return quantidadeNaSacola;
     }
 
 }
