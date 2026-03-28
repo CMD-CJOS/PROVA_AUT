@@ -12,7 +12,7 @@ import java.time.Duration;
 public class HomePage extends BasePage {
 
 
-    private By campoBusca = By.id("headerSearch");
+    private final By campoBusca = By.id("headerSearch");
     public HomePage(WebDriver driver) {
         super(driver);
     }

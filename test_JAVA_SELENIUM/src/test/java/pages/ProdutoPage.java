@@ -2,6 +2,7 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
@@ -15,6 +16,21 @@ public class ProdutoPage extends BasePage {
     private final By btnAdicionarSacola = By.xpath("//button[@data-testid='ptz-button-add-to-bag']");
     private final WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 
+    public By getPrecoSacola() {
+        return precoSacola;
+    }
+
+    public By getQuantidadeNoCarrinho() {
+        return quantidadeNoCarrinho;
+    }
+
+    public By getPrecoProduto() {
+        return precoProduto;
+    }
+
+    public By getBtnAdicionarSacola() {
+        return btnAdicionarSacola;
+    }
 
     public ProdutoPage(WebDriver driver) {
         super(driver);
@@ -40,6 +56,12 @@ public class ProdutoPage extends BasePage {
 
     public String capturaPrecoSacola() {
         return obterTexto(precoSacola);
+
+    }
+
+    public void irAteOElemento(By xpathElemento) {
+        WebElement elemento = driver.findElement(xpathElemento);
+        jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});",elemento);
 
     }
 }
