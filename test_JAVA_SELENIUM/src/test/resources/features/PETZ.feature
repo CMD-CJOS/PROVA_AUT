@@ -1,7 +1,8 @@
 # language: pt
 
 Funcionalidade: Comprar produto no site Petz
-@cenarioPadrao
+
+
   Esquema do Cenario: Validar o valor do produto <produto>
     Dado que um usuario entra no site "https://www.petz.com.br/"
     Quando que seleciona um produto com o nome <produto>
