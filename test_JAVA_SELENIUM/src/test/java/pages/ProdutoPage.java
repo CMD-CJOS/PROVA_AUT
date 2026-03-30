@@ -10,7 +10,7 @@ import java.time.Duration;
 
 public class ProdutoPage extends BasePage {
 
-    private final By precoSacola = By.cssSelector("div.cart-item-detail.detail-price .money");
+    private final By precoSacola = By.cssSelector(".total-installment .money");
     private final By quantidadeNoCarrinho = By.cssSelector("input[data-testid='ptz-bag-product-quantity']");
     private final By precoProduto = By.cssSelector(".current-price-left strong");
     private final By btnAdicionarSacola = By.xpath("//button[@data-testid='ptz-button-add-to-bag']");
@@ -61,7 +61,7 @@ public class ProdutoPage extends BasePage {
 
     public void irAteOElemento(By xpathElemento) {
         WebElement elemento = driver.findElement(xpathElemento);
-        jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});",elemento);
+        jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'up'});",elemento);
 
     }
 }

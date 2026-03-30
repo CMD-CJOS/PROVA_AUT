@@ -24,7 +24,7 @@ public class BasePage {
     public void zoomOut() {
 
         this.jsExecutor = (JavascriptExecutor) driver;
-        jsExecutor.executeScript("document.body.style.zoom = '60%';");
+        jsExecutor.executeScript("document.body.style.zoom = '70%';");
 
     }
 
