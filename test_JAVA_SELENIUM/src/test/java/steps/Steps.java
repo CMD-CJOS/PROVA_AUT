@@ -33,7 +33,7 @@ public class Steps {
         home.buscarCookies();
         base.zoomOut();
         Thread.sleep(5000);
-        base.printTelaAtual("print_pagina_inicial.jpg");
+        base.printTelaAtual("print_pagina_inicial");
     }
 
     @Quando("que seleciona um produto com o nome {string}")
@@ -44,7 +44,7 @@ public class Steps {
         home.buscarProduto(nome);
         produtoPage.irAteOElemento(produtoPage.getPrecoProduto());
         Thread.sleep(5000);
-        base.printTelaAtual("print_pagina_produto_" + nomeProduto + ".jpg");
+        base.printTelaAtual("print_pagina_produto_" + nomeProduto);
     }
 
 
@@ -56,7 +56,7 @@ public class Steps {
         produtoPage.irAteOElemento(produtoPage.getBtnAdicionarSacola());
         produtoPage.adicionarAoCarrinho();
         Thread.sleep(5000);
-        base.printTelaAtual("print_pagina_produto_"+nomeProduto+".jpg");
+        base.printTelaAtual("print_pagina_produto_"+nomeProduto);
 
     }
 
@@ -69,7 +69,7 @@ public class Steps {
         Assert.assertEquals(quantidadeNoCarrinho, quantidade);
         produtoPage.irAteOElemento(produtoPage.getQuantidadeNoCarrinho());
         Thread.sleep(5000);
-        base.printTelaAtual("print_pagina_carrinho_inicial_"+nomeProduto+".jpg");
+        base.printTelaAtual("print_pagina_carrinho_inicial_"+nomeProduto);
     }
 
 
@@ -82,7 +82,7 @@ public class Steps {
         produtoPage.irAteOElemento(produtoPage.getPrecoSacola());
         Assert.assertEquals(valorEsperado, precoSacola);
         Thread.sleep(5000);
-        base.printTelaAtual("print_pagina_carrinho_final_"+nomeProduto+".jpg");
+        base.printTelaAtual("print_pagina_carrinho_final_"+nomeProduto);
         driver.quit();
     }
 

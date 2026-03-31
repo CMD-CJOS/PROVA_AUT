@@ -15,3 +15,4 @@ Funcionalidade: Comprar produto no site Petz
       | "Ração Selections For Pet para Cães Filhotes Mini/Pequenos Sabor Frango 3 kg" | "R$ 42,69"    |
       | "Anti-inflamatório MSD Posatex 17,5ml"                                        | "R$ 122,39"   |
       | "Brinquedo Arranhador São Pet Olimpus para Gatos Marrom"                      | "R$ 2.499,99" |
+
