@@ -54,7 +54,7 @@ public class BasePage {
 
         File srcFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
         String pastaDestino = "C:\\Users\\colisouz\\OneDrive - NTT DATA EMEAL\\Imagens\\imagensAutomacao\\";
-        FileUtils.copyFile(srcFile, new File(pastaDestino + nomeArquivo));
+        FileUtils.copyFile(srcFile, new File(pastaDestino + nomeArquivo + ".png"));
 
 
     }
